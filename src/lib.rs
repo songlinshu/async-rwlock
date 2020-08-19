@@ -1,6 +1,6 @@
 //! An async reader-writer lock.
 //!
-//! The locking stragegy is fair: neither readers nor writers will be starved, assuming the task
+//! The locking strategy is fair: neither readers nor writers will be starved, assuming the task
 //! executor is also fair.
 //!
 //! # Examples
