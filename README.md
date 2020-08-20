@@ -11,8 +11,12 @@ https://docs.rs/async-rwlock)
 
 An async reader-writer lock.
 
-The locking stragegy is fair: neither readers nor writers will be starved, assuming the task
-executor is also fair.
+This type of lock allows multiple readers or one writer at any point in time.
+
+The locking strategy is write-preferring, which means writers are never starved.
+
+Releasing a write lock wakes the next blocked reader and the next blocked writer. If the task
+scheduler is fair, readers will not be starved either.
 
 ## Examples
 
